@@ -46,4 +46,8 @@ pipeline {
 }
 ```
 
-You need to run any docker commands with sudo priveledges. This is to protect the host docker.sock. A consequence of this is that you cannot use the Jenkins docker agent (permission denied). You will be running any docker or docker-compose commands directly as shell commands as in the example. 
+You need to run any docker commands with sudo priveledges. This is to protect the host docker.sock. A consequence of this is that you cannot use the Jenkins docker agent (permission denied). You will be running any docker or docker-compose commands directly as shell commands as in the example.
+
+### Folder permissions
+
+Before bringing up the container you must run `sudo mkdir /var/jenkins_home && sudo chown -R 1000 /var/jenkins_home` to ensure that it belongs to the jenkins user.  
