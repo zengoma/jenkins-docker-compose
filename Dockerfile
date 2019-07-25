@@ -15,3 +15,5 @@ RUN chmod +x /usr/local/bin/docker-compose
 RUN usermod -aG sudo jenkins && echo "jenkins ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
 
 USER jenkins
+
+RUN pip install ansible
